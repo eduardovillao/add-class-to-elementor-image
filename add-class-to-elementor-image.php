@@ -122,10 +122,9 @@ final class ACEI_Init {
     
             return preg_replace( '/class="(.*)"/', 'class="'.$settings['cei_image_custom_class'].' \1"', $html );
         } 
-		else {
-			
-			return $html;
-		}
+	else {	
+	    return $html;
+	}
     }
 }
 
