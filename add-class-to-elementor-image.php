@@ -70,7 +70,7 @@ final class ACEI_Init {
     /**
 	 * Init Elemento mods
 	 *
-	 * Add Elementos mods just is plugins exist and is loaded.
+	 * Add Elementor mods if plugins exist and is loaded.
 	 * 
 	 * @since 1.0
 	 *
@@ -85,6 +85,25 @@ final class ACEI_Init {
 		add_action( 'elementor/element/image/section_image/before_section_end', [ $this, 'add_class_control' ], 10, 2 );
 		add_filter( 'elementor/image_size/get_attachment_image_html', [ $this, 'add_custom_class' ], 10, 4 );
 		add_action( 'elementor/element/image-box/section_image/before_section_end', [ $this, 'add_class_control' ], 10, 2 );
+		add_action( 'wp_loaded', [ $this, 'add_elementor_pro_mod' ] );		
+	}
+	
+	/**
+	 * Init Elementor PRO mods
+	 *
+	 * Add Elementor PRO mods if the plugin exist and is loaded.
+	 * 
+	 * @since 1.0
+	 *
+	 * @access public
+	 */
+    public function add_elementor_pro_mod() {
+		
+		if ( ! did_action( 'elementor_pro/init' ) ) {
+			return;
+		}
+		
+		add_action( 'elementor/element/theme-post-featured-image/section_image/before_section_end', [ $this, 'add_class_control' ], 10, 2 );
 	}
 
     /**
