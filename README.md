@@ -22,17 +22,12 @@ Please, send to me: [plugins@eduardovillao.me](mailto:plugins@eduardovillao.me)
 = 1.2 =
 
 * Add support to "Featured Image" Widget (Elementor PRO).
-
-= 1.1 =
-
 * Add support to "Image Box" Widget.
 * Compatibility with WP 5.8.
 
 = 1.1 =
 
-* Add support to "Featured Image" Widget (Elementor PRO).
 * Add support to "Image Box" Widget.
-* Compatibility with WP 5.8.
 
 = 1.0 =
 
