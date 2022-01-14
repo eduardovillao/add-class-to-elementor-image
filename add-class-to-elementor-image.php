@@ -5,10 +5,28 @@
  * Description: Simple plugin to add custom CSS class to Elementor image.
  * Author: EduardoVillao.me
  * Author URI: https://eduardovillao.me/
- * Version: 1.2
+ * Version: 1.2.1
+ * Requires at least: 5.3
+ * Requires PHP: 7.0
+ * Text Domain: add-class-to-elementor-image
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
+
+/*
+Add class to Elementor Image is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+any later version.
+ 
+Add class to Elementor Image is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+ 
+You should have received a copy of the GNU General Public License
+along with Add class to Elementor Image. If not, see {URI to Plugin License}.
+*/
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -85,7 +103,7 @@ final class ACEI_Init {
 		add_action( 'elementor/element/image/section_image/before_section_end', [ $this, 'add_class_control' ], 10, 2 );
 		add_filter( 'elementor/image_size/get_attachment_image_html', [ $this, 'add_custom_class' ], 10, 4 );
 		add_action( 'elementor/element/image-box/section_image/before_section_end', [ $this, 'add_class_control' ], 10, 2 );
-		add_action( 'wp_loaded', [ $this, 'add_elementor_pro_mod' ] );		
+		add_action( 'wp_loaded', [ $this, 'add_elementor_pro_mod' ] );
 	}
 	
 	/**
@@ -120,9 +138,9 @@ final class ACEI_Init {
         $image->add_control(
             'cei_image_custom_class',
             [
-                'label' => __( 'Custom Class', 'plugin-domain' ),
+                'label' => __( 'Custom Class', 'add-class-to-elementor-image' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __( 'your-custom-class', 'plugin-domain' ),
+                'placeholder' => __( 'your-custom-class-here', 'add-class-to-elementor-image' ),
             ]
         );
     }
@@ -138,9 +156,9 @@ final class ACEI_Init {
 	 */
     public function add_custom_class( $html, $settings, $image_size_key, $image_key ) {
 
-        if( $settings['cei_image_custom_class'] ) {
+        if( isset( $settings['cei_image_custom_class'] ) && ! empty( $settings['cei_image_custom_class'] ) ) {
     
-            return preg_replace( '/class="(.*)"/', 'class="'.$settings['cei_image_custom_class'].' \1"', $html );
+            return preg_replace( '/class="(.*)"/', 'class="' . $settings['cei_image_custom_class'] . ' \1"', $html );
         } 
 		else {
 			

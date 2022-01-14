@@ -19,6 +19,13 @@ Please, send to me: [plugins@eduardovillao.me](mailto:plugins@eduardovillao.me)
 ## Changelog
 
 ```
+= 1.2.1 =
+
+* Fix php notice "Undefined index: cei_image_custom_class" in some cases.
+* Support to plugin translations.
+* Improve plugin header requirements.
+* Compatibility with WP 5.8.3.
+
 = 1.2 =
 
 * Add support to "Featured Image" Widget (Elementor PRO).
