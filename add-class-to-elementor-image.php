@@ -25,7 +25,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
  
 You should have received a copy of the GNU General Public License
-along with Add class to Elementor Image. If not, see {URI to Plugin License}.
+along with Add class to Elementor Image. If not, see http://www.gnu.org/licenses/gpl-2.0.txt.
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -69,6 +69,31 @@ final class ACEI_Init {
 			self::$_instance = new self();
 		}
 		return self::$_instance;
+	}
+
+	/**
+	 * Disable class cloning and throw an error on object clone.
+	 *
+	 * The whole idea of the singleton design pattern is that there is a single
+	 * object. Therefore, we don't want the object to be cloned.
+	 *
+	 * @access public
+	 * @since 1.6
+	 */
+	public function __clone() {
+		// Cloning instances of the class is forbidden.
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.2.1' );
+	}
+
+	/**
+	 * Disable unserializing of the class.
+	 *
+	 * @access public
+	 * @since 1.6
+	 */
+	public function __wakeup() {
+		// Unserializing instances of the class is forbidden.
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.2.1' );
 	}
 
     /**
