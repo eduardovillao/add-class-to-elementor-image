@@ -2,9 +2,9 @@
 Contributors: EVCODE
 Donate link: https://eduardovillao.me/
 Tags: elementor, custom class, elementor pro, image class, lazy load
-Requires at least: 5.3
-Tested up to: 5.8
-Stable tag: 1.2.1
+Requires at least: 5.4
+Tested up to: 6.0
+Stable tag: 1.2.2
 Requires PHP: 7.0
 License: GPLv2License 
 URI:https://www.gnu.org/licenses/gpl-2.0.html
@@ -43,22 +43,21 @@ Please, send to me: [plugins@eduardovillao.me](mailto:plugins@eduardovillao.me)
 
 == Changelog ==
 
-= 1.2.1 =
+= 1.2.2 =
+Changed: Compatibility with WordPress 6.0.
 
+= 1.2.1 =
 * Fix php notice "Undefined index: cei_image_custom_class" in some cases.
 * Support to plugins translation.
 * Improve plugins header requirements.
 * Compatibility with WP 5.8.3.
 
 = 1.2 =
-
 * Add support to "Featured Image" Widget (Elementor PRO).
 * Compatibility with WP 5.8.
 
 = 1.1 =
-
 * Add support to "Image Box" Widget.
 
 = 1.0 =
-
 * Initial release.
