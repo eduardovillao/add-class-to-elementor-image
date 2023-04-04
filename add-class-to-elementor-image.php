@@ -5,7 +5,7 @@
  * Description: Simple plugin to add custom CSS class to Elementor image.
  * Author: EduardoVillao.me
  * Author URI: https://eduardovillao.me/
- * Version: 1.2.3
+ * Version: 1.2.4
  * Requires at least: 5.4
  * Requires PHP: 7.0
  * Text Domain: add-class-to-elementor-image
@@ -18,12 +18,12 @@ Add class to Elementor Image is free software: you can redistribute it and/or mo
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 any later version.
- 
+
 Add class to Elementor Image is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
- 
+
 You should have received a copy of the GNU General Public License
 along with Add class to Elementor Image. If not, see http://www.gnu.org/licenses/gpl-2.0.txt.
 */
@@ -82,7 +82,7 @@ final class ACEI_Init {
 	 */
 	public function __clone() {
 		// Cloning instances of the class is forbidden.
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.2.3' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.2.4' );
 	}
 
 	/**
@@ -93,14 +93,14 @@ final class ACEI_Init {
 	 */
 	public function __wakeup() {
 		// Unserializing instances of the class is forbidden.
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.2.3' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.2.4' );
 	}
 
     /**
 	 * Constructor
 	 *
 	 * Private method for prevent instance outsite the class.
-	 * 
+	 *
 	 * @since 1.0
 	 *
 	 * @access private
@@ -114,7 +114,7 @@ final class ACEI_Init {
 	 * Init Elemento mods
 	 *
 	 * Add Elementor mods if plugins exist and is loaded.
-	 * 
+	 *
 	 * @since 1.0
 	 *
 	 * @access public
@@ -130,22 +130,22 @@ final class ACEI_Init {
 		add_action( 'elementor/element/image-box/section_image/before_section_end', [ $this, 'add_class_control' ], 10, 2 );
 		add_action( 'wp_loaded', [ $this, 'add_elementor_pro_mod' ] );
 	}
-	
+
 	/**
 	 * Init Elementor PRO mods
 	 *
 	 * Add Elementor PRO mods if the plugin exist and is loaded.
-	 * 
+	 *
 	 * @since 1.0
 	 *
 	 * @access public
 	 */
     public function add_elementor_pro_mod() {
-		
+
 		if ( ! did_action( 'elementor_pro/init' ) ) {
 			return;
 		}
-		
+
 		add_action( 'elementor/element/theme-post-featured-image/section_image/before_section_end', [ $this, 'add_class_control' ], 10, 2 );
 	}
 
@@ -153,13 +153,13 @@ final class ACEI_Init {
 	 * Add class control
 	 *
 	 * Add custom control to image widget.
-	 * 
+	 *
 	 * @since 1.0
 	 *
 	 * @access public
 	 */
     public function add_class_control( $image, $args) {
-	
+
         $image->add_control(
             'cei_image_custom_class',
             [
@@ -174,7 +174,7 @@ final class ACEI_Init {
 	 * Add custom class
 	 *
 	 * Add custom class to HTML img.
-	 * 
+	 *
 	 * @since 1.0
 	 *
 	 * @access public
@@ -182,11 +182,11 @@ final class ACEI_Init {
     public function add_custom_class( $html, $settings, $image_size_key, $image_key ) {
 
         if( isset( $settings['cei_image_custom_class'] ) && ! empty( $settings['cei_image_custom_class'] ) ) {
-    
+
             return preg_replace( '/class="(.*)"/', 'class="' . $settings['cei_image_custom_class'] . ' \1"', $html );
-        } 
+        }
 		else {
-			
+
 			return $html;
 		}
     }

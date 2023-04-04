@@ -2,7 +2,7 @@
 
 ## Description
 
-You need add your custom CSS class to Elementor image widget? Me too! 
+You need add your custom CSS class to Elementor image widget? Me too!
 
 So i created this simple plugin to help. Just install and use the new input in Image widget to add your custom class.
 
@@ -17,8 +17,16 @@ Check my other plugins: [WordPress Plugins](https://eduardovillao.me/wordpress-p
 Please, send to me: [plugins@eduardovillao.me](mailto:plugins@eduardovillao.me)
 
 ## Changelog
-
 ```
+= 1.2.4 =
+Changed: Compatibility with WordPress 6.2.
+
+= 1.2.3 =
+Changed: Compatibility with WordPress 6.1.
+
+= 1.2.2 =
+Changed: Compatibility with WordPress 6.0.
+
 = 1.2.1 =
 
 * Fix php notice "Undefined index: cei_image_custom_class" in some cases.

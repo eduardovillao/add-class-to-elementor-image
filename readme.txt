@@ -3,17 +3,17 @@ Contributors: EVCODE
 Donate link: https://eduardovillao.me/
 Tags: elementor, custom class, elementor pro, image class, lazy load
 Requires at least: 5.4
-Tested up to: 6.1
-Stable tag: 1.2.3
+Tested up to: 6.2
+Stable tag: 1.2.4
 Requires PHP: 7.0
-License: GPLv2License 
+License: GPLv2License
 URI:https://www.gnu.org/licenses/gpl-2.0.html
 
 Simple plugin to add custom CSS class to Elementor image.
 
 == Description ==
 
-You need add your custom CSS class to Elementor image widget? Me too! 
+You need add your custom CSS class to Elementor image widget? Me too!
 
 So i created this simple plugin to help. Just install and use the new input in Image widget to add your custom class.
 
@@ -42,6 +42,9 @@ Please, send to me: [plugins@eduardovillao.me](mailto:plugins@eduardovillao.me)
 1. image custom class
 
 == Changelog ==
+
+= 1.2.4 =
+Changed: Compatibility with WordPress 6.2.
 
 = 1.2.3 =
 Changed: Compatibility with WordPress 6.1.
