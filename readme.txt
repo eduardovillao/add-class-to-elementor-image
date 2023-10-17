@@ -3,8 +3,8 @@ Contributors: EVCODE
 Donate link: https://eduardovillao.me/
 Tags: elementor, custom class, elementor pro, image class, lazy load
 Requires at least: 5.4
-Tested up to: 6.2
-Stable tag: 1.2.4
+Tested up to: 6.3
+Stable tag: 1.3
 Requires PHP: 7.0
 License: GPLv2License
 URI:https://www.gnu.org/licenses/gpl-2.0.html
@@ -42,6 +42,10 @@ Please, send to me: [plugins@eduardovillao.me](mailto:plugins@eduardovillao.me)
 1. image custom class
 
 == Changelog ==
+
+= 1.3 =
+Fix: do not workin on the latest Elementor verions.
+Changed: Compatibility with WordPress 6.3.
 
 = 1.2.4 =
 Changed: Compatibility with WordPress 6.2.

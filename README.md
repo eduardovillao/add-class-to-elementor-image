@@ -18,6 +18,10 @@ Please, send to me: [plugins@eduardovillao.me](mailto:plugins@eduardovillao.me)
 
 ## Changelog
 ```
+= 1.3 =
+Fix: do not workin on the latest Elementor verions.
+Changed: Compatibility with WordPress 6.3.
+
 = 1.2.4 =
 Changed: Compatibility with WordPress 6.2.
 
