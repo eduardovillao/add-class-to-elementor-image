@@ -5,7 +5,7 @@
  * Description: Simple plugin to add custom CSS class to Elementor image.
  * Author: EduardoVillao.me
  * Author URI: https://eduardovillao.me/
- * Version: 1.2.4
+ * Version: 1.3
  * Requires at least: 5.4
  * Requires PHP: 7.0
  * Text Domain: add-class-to-elementor-image
@@ -29,7 +29,7 @@ along with Add class to Elementor Image. If not, see http://www.gnu.org/licenses
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	exit;
 }
 
 /**
@@ -82,7 +82,7 @@ final class ACEI_Init {
 	 */
 	public function __clone() {
 		// Cloning instances of the class is forbidden.
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.2.4' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.3' );
 	}
 
 	/**
@@ -93,7 +93,7 @@ final class ACEI_Init {
 	 */
 	public function __wakeup() {
 		// Unserializing instances of the class is forbidden.
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.2.4' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.3' );
 	}
 
     /**
@@ -180,14 +180,15 @@ final class ACEI_Init {
 	 * @access public
 	 */
     public function add_custom_class( $html, $settings, $image_size_key, $image_key ) {
-
-        if( isset( $settings['cei_image_custom_class'] ) && ! empty( $settings['cei_image_custom_class'] ) ) {
-
-            return preg_replace( '/class="(.*)"/', 'class="' . $settings['cei_image_custom_class'] . ' \1"', $html );
-        }
-		else {
-
+		if( ! isset( $settings['cei_image_custom_class'] ) && empty( $settings['cei_image_custom_class'] ) ) {
 			return $html;
+		}
+
+        $attrClass = strpos( $html, "class=" );
+		if ( $attrClass ) {
+			return preg_replace( '/class="(.*)"/', 'class="' . $settings['cei_image_custom_class'] . ' \1"', $html );
+		} else {
+			return preg_replace( '/src="(.*)"/', 'class="' . $settings['cei_image_custom_class'] . '" src="\1"', $html );
 		}
     }
 }
