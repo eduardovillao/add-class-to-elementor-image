@@ -180,14 +180,15 @@ final class ACEI_Init {
 	 * @access public
 	 */
     public function add_custom_class( $html, $settings, $image_size_key, $image_key ) {
-
-        if( isset( $settings['cei_image_custom_class'] ) && ! empty( $settings['cei_image_custom_class'] ) ) {
-
-            return preg_replace( '/class="(.*)"/', 'class="' . $settings['cei_image_custom_class'] . ' \1"', $html );
-        }
-		else {
-
+		if( ! isset( $settings['cei_image_custom_class'] ) && empty( $settings['cei_image_custom_class'] ) ) {
 			return $html;
+		}
+
+        $attrClass = strpos( $html, "class=" );
+		if ( $attrClass ) {
+			return preg_replace( '/class="(.*)"/', 'class="' . $settings['cei_image_custom_class'] . ' \1"', $html );
+		} else {
+			return preg_replace( '/src="(.*)"/', 'class="' . $settings['cei_image_custom_class'] . '" src="\1"', $html );
 		}
     }
 }
