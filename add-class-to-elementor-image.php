@@ -5,8 +5,8 @@
  * Description: Simple plugin to add custom CSS class to Elementor image.
  * Author: EduardoVillao.me
  * Author URI: https://eduardovillao.me/
- * Version: 1.3
- * Requires at least: 5.4
+ * Version: 1.3.1
+ * Requires at least: 5.5
  * Requires PHP: 7.0
  * Text Domain: add-class-to-elementor-image
  * License: GPL-2.0+
@@ -81,8 +81,7 @@ final class ACEI_Init {
 	 * @since 1.6
 	 */
 	public function __clone() {
-		// Cloning instances of the class is forbidden.
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.3' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.3.1' );
 	}
 
 	/**
@@ -92,8 +91,7 @@ final class ACEI_Init {
 	 * @since 1.6
 	 */
 	public function __wakeup() {
-		// Unserializing instances of the class is forbidden.
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.3' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.3.1' );
 	}
 
     /**
@@ -106,7 +104,6 @@ final class ACEI_Init {
 	 * @access private
 	 */
 	private function __construct() {
-
         add_action( 'plugins_loaded', [ $this, 'add_elementor_mod' ] );
 	}
 
@@ -120,7 +117,6 @@ final class ACEI_Init {
 	 * @access public
 	 */
     public function add_elementor_mod() {
-
         if ( ! did_action( 'elementor/loaded' ) ) {
 			return;
 		}
@@ -141,7 +137,6 @@ final class ACEI_Init {
 	 * @access public
 	 */
     public function add_elementor_pro_mod() {
-
 		if ( ! did_action( 'elementor_pro/init' ) ) {
 			return;
 		}
@@ -159,7 +154,6 @@ final class ACEI_Init {
 	 * @access public
 	 */
     public function add_class_control( $image, $args) {
-
         $image->add_control(
             'cei_image_custom_class',
             [
