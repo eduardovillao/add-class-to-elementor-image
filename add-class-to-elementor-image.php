@@ -5,7 +5,7 @@
  * Description: Simple plugin to add custom CSS class to Elementor image.
  * Author: EduardoVillao.me
  * Author URI: https://eduardovillao.me/
- * Version: 1.3.1
+ * Version: 1.3.2
  * Requires at least: 5.5
  * Requires PHP: 7.0
  * Text Domain: add-class-to-elementor-image
@@ -81,7 +81,7 @@ final class ACEI_Init {
 	 * @since 1.6
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.3.1' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.3.2' );
 	}
 
 	/**
@@ -91,7 +91,7 @@ final class ACEI_Init {
 	 * @since 1.6
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.3.1' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Something went wrong.', 'add-class-to-elementor-image' ), '1.3.2' );
 	}
 
     /**
